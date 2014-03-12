@@ -2,7 +2,7 @@ from rail import rail, derail
 from cesar import encesar, decesar
 
 
-if __name__ == '__main__':
+def main():
     menu = 99
     while True:
         if menu == 99:
@@ -50,3 +50,6 @@ if __name__ == '__main__':
             n = int(input('Jakis N:'))
             out = encesar.encrypt_cesar(t1, k0, k1, n)
             print('Wynik: ' + out)
+
+if __name__ == '__main__':
+    main()
