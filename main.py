@@ -14,12 +14,39 @@ if __name__ == '__main__':
                   '99. Wyswietlenie opcji\n'
                   'ctrl-c. wyjscie\n')
         menu = 0
-        temp = input('> ')
+        try:
+            temp = input('> ')
+        except KeyboardInterrupt:
+            print('wyjscie')
+            break
         try:
             menu = int(temp)
         except ValueError:
             print('blad!')
-        except KeyboardInterrupt:
-            print('wyjscie')
-            break
+        if menu == 1:
+            t1 = input('Tekst do zaszyfrowania: ').replace(' ', '_')
+            n = 0
+            while n==0:
+                tn = input('Wartosc N: ')
+                try:
+                    n = int(tn)
+                except ValueError:
+                    print('blad')
+            print('Wynik: ' + rail.rail(t1, n))
+        if menu == 2:
+            t1 = input('Tekst do odszyfrowania: ').replace(' ', '_')
+            n = 0
+            while n == 0:
+                tn = input('Wartosc N: ')
+                try:
+                    n = int(tn)
+                except ValueError:
+                    print('blad')
+            print('Wynik: ' + derail.derail(t1, n))
         if menu == 7:
+            t1 = input('Tekst do zaszyfrowania: ')
+            k0 = int(input('Klucz1: '))
+            k1 = int(input('Klucz2: '))
+            n = int(input('Jakis N:'))
+            out = encesar.encrypt_cesar(t1, k0, k1, n)
+            print('Wynik: ' + out)

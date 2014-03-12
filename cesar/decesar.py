@@ -19,7 +19,7 @@ def euler(number):
     return ret
 
 
-def decrypt_cesar(tekst, k0, k1, n):
+def decrypt_cesar(tekst='', k0=0, k1=0, n=1):
     out = ''
     for i in range(len(tekst)):
         temp = ((ord(tekst[i])+(n - k0)) * k1) % n
