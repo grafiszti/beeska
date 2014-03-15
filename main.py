@@ -1,6 +1,5 @@
 from rail import rail, derail
 from cesar import encesar, decesar
-import constants
 
 
 def main():
