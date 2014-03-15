@@ -1,3 +1,5 @@
+import constants
+
 def hcf(n1, n2):
   while n1*n2:
     if n1 > n2:
@@ -19,31 +21,17 @@ def euler(number):
     return ret
 
 
-alphabet = {'a', 'b', 'c', 'd', 'e', 'f',
-            'g', 'h', 'i', 'j', 'k', 'l',
-            'm', 'n', 'o', 'p', 'r', 's',
-            't', 'u', 'v', 'w', 'x', 'y',
-            'z'}
-
-
-def index_of(table={'a'}, element_to_check='b'):
-    for i in range(len(table)):
-        if table[i] == element_to_check:
-            return i
-    return -1
-
-
-def decrypt_cesar(tekst='', k0=0, k1=0, n=1):
+def decrypt_cesar(tekst='', k0=0, k1=0):
     out = ''
-    euler_number = euler(n)
+    euler_number = euler(len(constants.alphabet)) - 1
     for i in range(len(tekst)):
-        temp = index_of(alphabet, tekst[i])
-        if temp != -1:
-            temp = (temp + (len(alphabet) - k0)) * k1
-            temp2 = 1
+        if tekst[i] in constants.alphabet:
+            temp = constants.alphabet.index(tekst[i])
+            temp = ((temp + (len(constants.alphabet) - k0)) * k1) % len(constants.alphabet)
+            temp2 = temp
             for j in range(euler_number):#jak cos to mozna odjac 1 od euer_number bo nie wiem czy to tak nie powinno byc
-                temp2 = temp2 * temp % len(alphabet)
-            out += alphabet[temp2]
-        elif temp == -1:
+                temp2 = (temp2 * temp) % len(constants.alphabet)
+            out += constants.alphabet[temp2]
+        else:
             out += ' '
     return out

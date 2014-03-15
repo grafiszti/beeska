@@ -1,5 +1,6 @@
 from rail import rail, derail
 from cesar import encesar, decesar
+import constants
 
 
 def main():
@@ -47,9 +48,13 @@ def main():
             t1 = input('Tekst do zaszyfrowania: ')
             k0 = int(input('Klucz1: '))
             k1 = int(input('Klucz2: '))
-            n = int(input('Jakis N:'))
-            out = encesar.encrypt_cesar(t1, k0, k1, n)
+            out = encesar.encrypt_cesar(t1, k0, k1)
             print('Wynik: ' + out)
-
+        if menu == 8:
+            t1 = input('Tekst do odszyfrowania: ')
+            k0 = int(input('Klucz1: '))
+            k1 = int(input('Klucz2: '))
+            out = decesar.decrypt_cesar(t1, k0, k1)
+            print('Wynik: ' + out)
 if __name__ == '__main__':
     main()
