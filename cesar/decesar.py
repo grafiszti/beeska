@@ -1,5 +1,3 @@
-import constants
-
 def hcf(n1, n2):
   while n1*n2:
     if n1 > n2:
