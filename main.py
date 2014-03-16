@@ -1,5 +1,6 @@
 from rail import rail, derail
 from cesar import encesar, decesar
+from vigenere import envig, devig
 
 
 def main():
@@ -11,6 +12,8 @@ def main():
                   '2. derail\n'
                   '7. szyfrowanie cezara\n'
                   '8. deszyfrowanie cezara\n'
+                  '9. szyrfowanie Vigenerea\n'
+                  '10. deszyrfowanie Vigenerea\n'
                   '99. Wyswietlenie opcji\n'
                   'ctrl-c. wyjscie\n')
         menu = 0
@@ -47,9 +50,23 @@ def main():
             t1 = input('Tekst do zaszyfrowania: ')
             k0 = int(input('Klucz1: '))
             k1 = int(input('Klucz2: '))
-            n = int(input('Jakis N:'))
-            out = encesar.encrypt_cesar(t1, k0, k1, n)
+            out = encesar.encrypt_cesar(t1, k0, k1)
             print('Wynik: ' + out)
-
+        if menu == 8:
+            t1 = input('Tekst do odszyfrowania: ')
+            k0 = int(input('Klucz1: '))
+            k1 = int(input('Klucz2: '))
+            out = decesar.decrypt_cesar(t1, k0, k1)
+            print('Wynik: ' + out)
+        if menu == 9:
+            t1 = input('Tekst do zaszyfrowania: ')
+            k0 = input('Klucz: ')
+            out = envig.encrypt_vig(t1, k0)
+            print('Wynik: ' + out)
+        if menu == 10:
+            t1 = input('Tekst do odszyfrowania: ')
+            k0 = input('Klucz1: ')
+            out = devig.decrypt_vig(t1, k0)
+            print('Wynik: ' + out)
 if __name__ == '__main__':
     main()

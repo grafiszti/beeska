@@ -1,5 +1,8 @@
-def encrypt_cesar(tekst, k0, k1, n):
+import constants
+
+
+def encrypt_cesar(tekst, k0, k1):
     out = ''
     for i in range(len(tekst)):
-        out += chr(((ord(tekst[i]) * k1) + k0) % n + ord('a'))
+        out += constants.alphabet[((constants.alphabet.index(tekst[i]) * k1) + k0) % len(constants.alphabet)]
     return out
