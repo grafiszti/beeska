@@ -10,7 +10,10 @@ def main():
             print('Wybierz operacje do wykonania:\n'
                   '1. rail\n'
                   '2. derail\n'
-                  '7. szyfrowanie cezara\n'
+                  '3. szyfrowanie - przestawienie macierzowe\n'
+                  '4. deszyfrowanie - przestawienie macierzowe\n'
+                  '5. szyfrowanie - przestawienie macierzowe - zmienny klucz\n'
+                  '6. deszyfrowanie - przestawienie macierzowe - zmienny klucz\n'
                   '8. deszyfrowanie cezara\n'
                   '9. szyrfowanie Vigenerea\n'
                   '10. deszyrfowanie Vigenerea\n'
@@ -46,7 +49,47 @@ def main():
                 except ValueError:
                     print('blad')
             print('Wynik: ' + derail.derail(t1, n))
-        if menu == 7:
+         if menu == 3:
+            t1 = input('Tekst do zaszyfrowania: ').replace(' ', '_')
+            n = 0
+            while n==0:
+                tn = input('Wartosc N: ')
+                try:
+                    n = int(tn)
+                except ValueError:
+                    print('blad')
+            print('Wynik: ' + rail.rail(t1, n))
+        if menu == 4:
+            t1 = input('Tekst do odszyfrowania: ').replace(' ', '_')
+            n = 0
+            while n == 0:
+                tn = input('Wartosc N: ')
+                try:
+                    n = int(tn)
+                except ValueError:
+                    print('blad')
+            print('Wynik: ' + derail.derail(t1, n))
+         if menu == 5:
+            t1 = input('Tekst do zaszyfrowania: ').replace(' ', '_')
+            n = 0
+            while n==0:
+                tn = input('Wartosc N: ')
+                try:
+                    n = int(tn)
+                except ValueError:
+                    print('blad')
+            print('Wynik: ' + rail.rail(t1, n))
+        if menu == 6:
+            t1 = input('Tekst do odszyfrowania: ').replace(' ', '_')
+            n = 0
+            while n == 0:
+                tn = input('Wartosc N: ')
+                try:
+                    n = int(tn)
+                except ValueError:
+                    print('blad')
+            print('Wynik: ' + derail.derail(t1, n))
+         if menu == 7:
             t1 = input('Tekst do zaszyfrowania: ')
             k0 = int(input('Klucz1: '))
             k1 = int(input('Klucz2: '))
@@ -68,5 +111,7 @@ def main():
             k0 = input('Klucz1: ')
             out = devig.decrypt_vig(t1, k0)
             print('Wynik: ' + out)
+
+
 if __name__ == '__main__':
     main()
