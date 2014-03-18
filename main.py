@@ -49,7 +49,7 @@ def main():
                 except ValueError:
                     print('blad')
             print('Wynik: ' + derail.derail(t1, n))
-         if menu == 3:
+        if menu == 3:
             t1 = input('Tekst do zaszyfrowania: ').replace(' ', '_')
             n = 0
             while n==0:
@@ -69,7 +69,7 @@ def main():
                 except ValueError:
                     print('blad')
             print('Wynik: ' + derail.derail(t1, n))
-         if menu == 5:
+        if menu == 5:
             t1 = input('Tekst do zaszyfrowania: ').replace(' ', '_')
             n = 0
             while n==0:
@@ -89,7 +89,7 @@ def main():
                 except ValueError:
                     print('blad')
             print('Wynik: ' + derail.derail(t1, n))
-         if menu == 7:
+        if menu == 7:
             t1 = input('Tekst do zaszyfrowania: ')
             k0 = int(input('Klucz1: '))
             k1 = int(input('Klucz2: '))
