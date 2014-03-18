@@ -1,6 +1,13 @@
 from constants import alphabet
 
 
+#funkcja szyfrująca tekst kodem vigenera, w petli,
+#pobiera id kazdej literki z tekstu i zmienia go o
+#id literki klucza(dodaje) na odpowiednim miejscu w kluczu
+#kozystając z mod dlugosc klucza, jesli wyjdziemy poza
+#zakres alfabetu to mamy mod dlugosc alfabetu ktora zmienia
+#id na id znaku w alfabecie
+#zwracany jest zaszyfrowany cjąg znakow
 def encrypt_vig(tekst='', k=''):
     out = ''
     for i in range(len(tekst)):
